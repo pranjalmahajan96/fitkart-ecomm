@@ -17,7 +17,7 @@
 }
 
 .container {
-  margin: 4rem 0rem;
+  margin: 5rem 0rem;
   display: flex;
   flex-wrap: wrap;
   margin-left: auto;
@@ -119,8 +119,8 @@
 }
 
 .centered-div {
-  width: auto;
-  margin: auto;
+  width: 100%;
+  margin: auto auto;
 }
 
 .card-grid {
@@ -163,4 +163,19 @@
   100% {
     -webkit-transform: rotate(360deg);
   }
+}
+
+.container-form{
+  margin-top: 7rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: max-content;
+}
+
+.btn-no-hover:hover{
+  transform: scale(1);
+}
+
+.link-form{
+  color: var(--primary-color);
 }

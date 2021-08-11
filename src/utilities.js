@@ -9,11 +9,12 @@ import {
 } from "./apiCall";
 
 export const useUserActions = () => {
+  
   const { itemsInWishlist, itemsInCart, dispatch } = useData();
 
   const addToWishlistCB = async (item) => {
     const isAlreadyInWishlist = itemsInWishlist.find(
-      (wishlistItem) => item._id === wishlistItem.product_id._id
+      (wishlistItem) => item._id === wishlistItem.product._id
     );
 
     if (isAlreadyInWishlist) {
@@ -35,12 +36,12 @@ export const useUserActions = () => {
 
   const addToCartCB = async (item) => {
     const isAlreadyInCart = itemsInCart.find(
-      (cartItem) => item._id === cartItem.product_id._id
+      (cartItem) => item._id === cartItem.product._id
     );
-
+ 
     if (isAlreadyInCart) {
       const response = await incQtyInCartAPICall(isAlreadyInCart);
-      const item = isAlreadyInCart.product_id;
+      const item = isAlreadyInCart.product;
       if (response.data.success) {
         dispatch({
           type: "INCREASE_QTY_EXIST",
@@ -62,12 +63,12 @@ export const useUserActions = () => {
 
   const addToCartFromWishlistCB = async (item) => {
     const isAlreadyInCart = itemsInCart.find(
-      (cartItem) => item.product_id._id === cartItem.product_id._id
+      (cartItem) => item.product._id === cartItem.product._id
     );
 
     if (isAlreadyInCart) {
       const response = await incQtyInCartAPICall(isAlreadyInCart);
-      const item = isAlreadyInCart.product_id;
+      const item = isAlreadyInCart.product;
       if (response.data.success) {
         dispatch({
           type: "INCREASE_QTY_EXIST",
@@ -75,7 +76,7 @@ export const useUserActions = () => {
         });
       }
     } else {
-      const response = await addItemToCartAPICall(item.product_id._id, 1);
+      const response = await addItemToCartAPICall(item.product._id, 1);
       if (response.data.success) {
         dispatch({
           type: "ADD_TO_CART",
