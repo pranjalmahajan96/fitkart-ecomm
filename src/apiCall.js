@@ -19,14 +19,14 @@ export const getCartAPICall = async () => {
 
 export const addItemToWishlistAPICall = async (_id) => {
   const response = await axios.post(`${baseURL}/wishlist`, {
-    product_id: { _id }
+    product: _id
   });
   return response;
 };
 
 export const addItemToCartAPICall = async (_id, q) => {
   const response = await axios.post(`${baseURL}/cart`, {
-    product_id: _id,
+    product: _id,
     qty: q
   });
   return response;

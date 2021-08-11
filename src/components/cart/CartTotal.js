@@ -1,6 +1,6 @@
 const calcTotal = ({ cart }) => {
   let total = [];
-  total = cart.map((item) => item?.qty * item?.product_id?.price);
+  total = cart.map((item) => item?.qty * item?.product?.price);
   total = total.reduce((acc, val) => acc + val, 0);
   return total;
 };

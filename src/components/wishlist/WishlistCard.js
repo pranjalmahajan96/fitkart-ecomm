@@ -7,17 +7,17 @@ export const WishlistCard = ({ item }) => {
       <div className="thumbnail">
         <img
           className="card-img"
-          src={item?.product_id?.imageURL}
+          src={item?.product?.imageURL}
           alt="product"
         />
       </div>
       <div>
-        <h3>{item?.product_id?.name}</h3>
-        <h3>₹{item?.product_id?.price}</h3>
-        {item?.product_id?.fastDelivery && <h4> Fast Delivery </h4>}
-        {!item?.product_id?.fastDelivery && <h4> Minimum 3 days</h4>}
+        <h3>{item?.product?.name}</h3>
+        <h3>₹{item?.product?.price}</h3>
+        {item?.product?.fastDelivery && <h4> Fast Delivery </h4>}
+        {!item?.product?.fastDelivery && <h4> Minimum 3 days</h4>}
         <h4>
-          {item?.product_id?.stock === "instock" ? "In Stock" : "Out of Stock"}
+          {item?.product?.stock === "instock" ? "In Stock" : "Out of Stock"}
         </h4>
         <div>
           <button

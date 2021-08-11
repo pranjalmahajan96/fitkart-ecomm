@@ -7,6 +7,9 @@ import { Cart } from "./components/cart/Cart";
 import { Wishlist } from "./components/wishlist/Wishlist";
 import { useData } from "./hooks/useData";
 import { getCartAPICall, getWishlistAPICall } from "./apiCall";
+import { Login } from "./components/login/Login";
+import { Signup } from "./components/signup/Signup";
+import { PrivateRoute } from "./components/privateRoute/PrivateRoute";
 
 export default function App() {
   const { dispatch } = useData();
@@ -29,8 +32,10 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Products />} />
-        <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup/>} />
+        <PrivateRoute path="/wishlist" element={<Wishlist />} />
+        <PrivateRoute path="/cart" element={<Cart />} /> 
       </Routes>
     </div>
   );
