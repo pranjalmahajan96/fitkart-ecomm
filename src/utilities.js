@@ -16,7 +16,7 @@ export const useUserActions = () => {
     const isAlreadyInWishlist = itemsInWishlist.find(
       (wishlistItem) => item._id === wishlistItem.product._id
     );
-
+      console.log(isAlreadyInWishlist);
     if (isAlreadyInWishlist) {
       dispatch({
         type: "ALREADY_IN_WISHLIST"
@@ -36,7 +36,7 @@ export const useUserActions = () => {
 
   const addToCartCB = async (item) => {
     const isAlreadyInCart = itemsInCart.find(
-      (cartItem) => item._id === cartItem.product._id
+      (cartItem) => item._id === cartItem.product?._id
     );
  
     if (isAlreadyInCart) {

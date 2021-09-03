@@ -3,8 +3,8 @@ import { useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
 
 export const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("pranjal@gmail.com");
+  const [password, setPassword] = useState("pranjal");
   const [error, setError] = useState("");
   const { loginHandlerAsync } = useAuth();
   const navigate = useNavigate();
