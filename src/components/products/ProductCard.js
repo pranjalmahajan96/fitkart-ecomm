@@ -33,7 +33,7 @@ export const ProductCard = ({ item }) => {
             disabled={item?.stock === "outofstock" ? true : false}
             onClick={() => addToCartCB(item)}
           >
-            {item.stock === "outofstock" ? "Out Of Stock" : "Add to Cart"}
+            {item?.stock === "outofstock" ? "Out Of Stock" : "Add to Cart"}
           </button>
         </div>
       </div>
