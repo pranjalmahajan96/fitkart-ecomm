@@ -10,6 +10,7 @@ import { getCartAPICall, getWishlistAPICall } from "./apiCall";
 import { Login } from "./components/login/Login";
 import { Signup } from "./components/signup/Signup";
 import { PrivateRoute } from "./components/privateRoute/PrivateRoute";
+import { Orders } from "./components/orders/Orders";
 
 export default function App() {
   const { dispatch } = useData();
@@ -36,6 +37,7 @@ export default function App() {
         <Route path="/signup" element={<Signup/>} />
         <PrivateRoute path="/wishlist" element={<Wishlist />} />
         <PrivateRoute path="/cart" element={<Cart />} /> 
+        <PrivateRoute path="/orders" element={<Orders />} />
       </Routes>
     </div>
   );

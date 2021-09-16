@@ -13,6 +13,7 @@ export const Signup = () => {
   const {signupHandlerAsync} = useAuth();
 
   const signupHandler = ({name, username, email, password}) => {
+    console.log(name, username, email, password);
     if (
       name === "" ||
       username === "" ||

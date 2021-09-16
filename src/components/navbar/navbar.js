@@ -58,18 +58,7 @@ export const Navbar = () => {
           </div>
 
           <ul className="list-non-bullet nav-pills">
-            <li className="list-item-inline">
-              <NavLink to="/wishlist" className="link link-active">
-                Wishlist
-              </NavLink>
-            </li>
-
-            <li className="list-item-inline">
-              <NavLink to="/cart" className="link link-active">
-                Cart
-              </NavLink>
-            </li>
-
+           
             <li className="list-item-inline">
               <NavLink to="/login" className="link link-active">
                   Login

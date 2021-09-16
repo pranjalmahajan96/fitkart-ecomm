@@ -26,7 +26,7 @@ export const Wishlist = () => {
         setShowError(false);
       }
     })();
-  });
+  },[]);
 
   return (
     <>

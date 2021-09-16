@@ -1,8 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 import { useUserActions } from "../../utilities";
 export const ProductCard = ({ item }) => {
   const { addToWishlistCB, addToCartCB } = useUserActions();
-
+  const { token } = useAuth();
+  const navigate = useNavigate();
   return (
     <div className="card card-shadow">
       <div className="thumbnail">
@@ -20,7 +23,13 @@ export const ProductCard = ({ item }) => {
         <div className="card-content-btn">
           <button
             className="btn btn-outline"
-            onClick={() => addToWishlistCB(item)}
+            onClick={() =>{ 
+              if(token){
+                addToWishlistCB(item)
+              } else {
+                navigate("/login");
+              }
+              }}
           >
             Add to Wishlist
           </button>
@@ -31,7 +40,15 @@ export const ProductCard = ({ item }) => {
                 : "btn btn-filled btn-disabled"
             }
             disabled={item?.stock === "outofstock" ? true : false}
-            onClick={() => addToCartCB(item)}
+            onClick={() => 
+              { 
+                if(token){
+                  addToCartCB(item)
+                } else {
+                  navigate("/login");
+                }
+                }
+            }
           >
             {item?.stock === "outofstock" ? "Out Of Stock" : "Add to Cart"}
           </button>
