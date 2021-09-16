@@ -27,7 +27,7 @@ export const Cart = () => {
         setShowError(false);
       }
     })();
-  });
+  },[]);
 
   return (
     <div>

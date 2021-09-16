@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useState } from "react";
 import { dataReducer } from "../reducer/reducer";
 
 const initialState = {
@@ -13,6 +13,7 @@ export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   const [state, dispatch] = useReducer(dataReducer, initialState);
+  const [total, setTotal] = useState(0);
 
   return (
     <>
@@ -23,7 +24,8 @@ export const DataProvider = ({ children }) => {
           dispatch,
           sortBy: state.sortBy,
           fastDeliveryOnly: state.fastDeliveryOnly,
-          includeOutOfStock: state.includeOutOfStock
+          includeOutOfStock: state.includeOutOfStock,
+          total, setTotal
         }}
       >
         {children}

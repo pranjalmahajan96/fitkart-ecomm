@@ -15,10 +15,6 @@ export const CartCard = ({ item }) => {
       <div>
         <h3>{item?.product?.name}</h3>
         <h3>₹{item?.product?.price}</h3>
-        <button className="btn btn-outline" onClick={() => incQtyCB(item)}>
-          +
-        </button>
-        <span>{item?.qty}</span>
         <button
           className={
             item?.qty > 1 ? "btn btn-outline" : "btn btn-outline btn-disabled"
@@ -27,6 +23,10 @@ export const CartCard = ({ item }) => {
           disabled={item?.qty <= 1 ? true : false}
         >
           -
+        </button>
+        <span>{item?.qty}</span>
+        <button className="btn btn-outline" onClick={() => incQtyCB(item)}>
+          +
         </button>
         <span>Sub-Total: ₹{item?.qty * item?.product?.price}</span>
         <div>

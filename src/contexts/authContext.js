@@ -12,6 +12,7 @@ export const AuthProvider = ({ children }) => {
     
     const signupHandlerAsync = async ({name, username, email, password}) => {
         try{
+            console.log("auth-context",name, username, email, password)
             const response = await axios.post("https://FitKartAPI.pranjalmahajan.repl.co/user/signup", {
                 name,
                 username,
@@ -25,6 +26,7 @@ export const AuthProvider = ({ children }) => {
                 }));
                 setLogin(true);
                 setToken(response.data.user.token);
+                navigate("/");
                 console.log("user signed up");
             }
             console.log(response.data);
@@ -47,6 +49,7 @@ export const AuthProvider = ({ children }) => {
              }));
              setLogin(true);
              setToken(response.data.user.token);
+             navigate("/");
              console.log("user logged in");
             //  console.log(response.data);
             }  
