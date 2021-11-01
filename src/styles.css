@@ -1,0 +1,181 @@
+@import url(https://lift-ui.netlify.app/lift.css);
+
+:root {
+  --complimentary: #8c0000;
+}
+.App {
+  text-align: center;
+}
+
+.Toastify__toast--default {
+  background: #fff;
+  color: var(--complimentary);
+}
+
+.link {
+  color: white;
+}
+
+.container {
+  margin: 5rem 0rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: stretch;
+  align-items: center;
+}
+
+.main-div-products {
+  display: grid;
+  grid-template-columns: 15% auto;
+  grid-template-areas:
+    "sidebar products products"
+    "sidebar products products"
+    "sidebar products products";
+  margin: 4rem 0rem;
+  justify-items: center;
+}
+
+@media screen and (max-width: 500px) {
+  .main-div-products {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "sidebar sidebar sidebar"
+      "products products products"
+      "products products products"
+      "products products products";
+  }
+  .container-products {
+    grid-area: products;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .side-bar {
+    grid-area: sidebar;
+    width: 100%;
+    margin: auto;
+  }
+}
+
+.container-products {
+  grid-area: products;
+  margin: 2rem 0rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.side-bar {
+  grid-area: sidebar;
+  margin-left: 5rem;
+  /* position: fixed;
+  top: 0rem; */
+}
+
+.card {
+  max-height: 650px;
+  margin: 0.5rem;
+}
+
+.card-product:hover {
+  box-shadow: 1rem 1rem 1rem 1rem rgb(0 0 0 / 75%);
+  transition: 1.5s;
+}
+/* .card-content-textual {
+  flex-shrink: 2;
+  flex-grow: 1;
+}
+.card-content-btn {
+  flex-shrink: 1;
+  flex-grow: 2;
+} */
+/* .btn-disabled {
+  background-color: var(--complimentary);
+  border: var(--complimentary);
+} */
+
+.btn-disabled:hover {
+  transform: scale(1);
+}
+
+.link-empty {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.link-empty:hover {
+  transform: scale(1.2);
+}
+
+.centered-div {
+  width: 100%;
+  margin: auto auto;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 80% auto;
+  grid-template-areas: "content content total";
+}
+
+.cart-total {
+  grid-area: total;
+}
+
+.card-content {
+  grid-area: content;
+}
+
+.btn-checkout:hover {
+  transform: scale(1);
+}
+
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid var(--primary-color);
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.container-form{
+  margin-top: 7rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: max-content;
+}
+
+.btn-no-hover:hover{
+  transform: scale(1);
+}
+
+.link-form{
+  color: var(--primary-color);
+}
